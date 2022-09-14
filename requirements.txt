@@ -6,3 +6,4 @@ pytz
 sqlalchemy
 werkzeug
 gunicorn
+psycopg2
