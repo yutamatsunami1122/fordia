@@ -7,9 +7,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import random, string
 import os
 
-db = SQLAlchemy()
-
 app = Flask(__name__)
+db = SQLAlchemy(app)
 
 #app.config['SECRET_KEY'] = os.urandom(24)
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
@@ -59,8 +58,7 @@ class Chat(db.Model):
     text = db.Column(db.String(200), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now(pytz.timezone('Asia/Tokyo')))
 
-with app.app_context():
-    db.create_all()
+db.create_all()
 
 @login_manager.user_loader
 def load_user(user_id):
