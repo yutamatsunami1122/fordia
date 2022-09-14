@@ -3,7 +3,6 @@ flask-login
 flask-sqlalchemy
 jinja2
 pytz
-sqlite
 sqlalchemy
 werkzeug
 gunicorn
