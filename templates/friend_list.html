@@ -10,7 +10,7 @@
                 <p style="color: red">{{messages[0]}}.</p>
             {% endif %}
         {% endwith %}
-        <form method="POST" action="{{url_for('main.friend_add')}}">
+        <form method="POST" action="{{url_for('friend_add')}}">
             <input type="text" name="friend_key" placeholder="Friend Key">
             <input type="submit" value="Add">
         </form>
@@ -20,7 +20,7 @@
             {% for friend in friends1 %}
                 <article>
                     <h3>{{friend.name}}</h3>
-                    <form method="POST" action="{{url_for('main.make_chatroom_in_friend_list')}}">
+                    <form method="POST" action="{{url_for('make_chatroom_in_friend_list')}}">
                         <input type="hidden" name="make_chatroom_in_friend_list" value="{{friend.id}}">
                         <input type="submit" value="Create a chatroom with {{friend.name}} added">
                     </form>
@@ -29,7 +29,7 @@
             {% for friend in friends2 %}
                 <article>
                     <h3>{{friend.name}}</h3>
-                    <form method="POST" action="{{url_for('main.make_chatroom_in_friend_list')}}">
+                    <form method="POST" action="{{url_for('make_chatroom_in_friend_list')}}">
                         <input type="hidden" name="make_chatroom_in_friend_list" value="{{friend.id}}">
                         <input type="submit" value="Create a chatroom with {{friend.name}} added">
                     </form>
@@ -40,7 +40,7 @@
             {% for maybe_friend in maybe_friends %}
                 <article>
                     <h3>{{maybe_friend.name}}</h3>
-                    <form method="POST" action="{{url_for('main.maybe_to_friend')}}">
+                    <form method="POST" action="{{url_for('maybe_to_friend')}}">
                         <input type="hidden" name="maybe_friend_id" value="{{maybe_friend.id}}">
                         <input type="submit" value="Add">
                     </form>

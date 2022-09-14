@@ -24,7 +24,7 @@
                 </div>
                 <div class="inbox_chat">
                     {% for c in chatrooms_user1 %}
-                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                         <div class="chat_list">
                             <div class="chat_people">
                                 <div class="chat_img">
@@ -39,7 +39,7 @@
                     </a>
                     {% endfor %}
                     {% for c in chatrooms_user2 %}
-                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                         <div class="chat_list">
                             <div class="chat_people">
                                 <div class="chat_img">
@@ -54,7 +54,7 @@
                     </a>
                     {% endfor %}
                     {% for c in chatrooms_user3 %}
-                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                         <div class="chat_list">
                             <div class="chat_people">
                                 <div class="chat_img">
@@ -69,7 +69,7 @@
                     </a>
                     {% endfor %}
                     {% for c in chatrooms_user4 %}
-                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                         <div class="chat_list">
                             <div class="chat_people">
                                 <div class="chat_img">
@@ -84,7 +84,7 @@
                     </a>
                     {% endfor %}
                     {% for c in chatrooms_user5 %}
-                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                         <div class="chat_list">
                             <div class="chat_people">
                                 <div class="chat_img">

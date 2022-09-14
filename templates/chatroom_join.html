@@ -24,7 +24,7 @@
                 {% endif %}
             </li>
         </ul>
-        <form method="POST" action="{{url_for('main.chatroom_join')}}">
+        <form method="POST" action="{{url_for('chatroom_join')}}">
             <input type="hidden" name="chatroom_id" value="{{chatroom_id}}">
             <input type="submit" value="Join">
         </form>

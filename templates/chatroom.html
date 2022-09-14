@@ -21,7 +21,7 @@
             </div>
             <div class="inbox_chat">
                 {% for c in chatrooms_user1 %}
-                <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                     <div class="chat_list">
                         <div class="chat_people">
                             <div class="chat_img">
@@ -36,7 +36,7 @@
                 </a>
                 {% endfor %}
                 {% for c in chatrooms_user2 %}
-                <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                     <div class="chat_list">
                         <div class="chat_people">
                             <div class="chat_img">
@@ -51,7 +51,7 @@
                 </a>
                 {% endfor %}
                 {% for c in chatrooms_user3 %}
-                <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                     <div class="chat_list">
                         <div class="chat_people">
                             <div class="chat_img">
@@ -66,7 +66,7 @@
                 </a>
                 {% endfor %}
                 {% for c in chatrooms_user4 %}
-                <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                     <div class="chat_list">
                         <div class="chat_people">
                             <div class="chat_img">
@@ -81,7 +81,7 @@
                 </a>
                 {% endfor %}
                 {% for c in chatrooms_user5 %}
-                <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
                     <div class="chat_list">
                         <div class="chat_people">
                             <div class="chat_img">
@@ -126,7 +126,7 @@
     </div>
     <div class="type_msg">
       <div class="input_msg_write">
-        <form method="POST" action="{{url_for('main.chat_post', chatroom_key=chatroom_key)}}">
+        <form method="POST" action="{{url_for('chat_post', chatroom_key=chatroom_key)}}">
             <input type="text" class="write_msg" name="text" placeholder="Type a message" />
             <button class="msg_send_btn" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
         </form>
@@ -168,35 +168,35 @@
     <br>
     <h1>Chatroom List</h1>
     {% for c in chatrooms_user1 %}
-    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
         <article>
             <h3>{{c.name}}</h3>
         </article>
     </a>
 {% endfor %}
 {% for c in chatrooms_user2 %}
-    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
         <article>
             <h3>{{c.name}}</h3>
         </article>
     </a>
 {% endfor %}
 {% for c in chatrooms_user3 %}
-    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
         <article>
             <h3>{{c.name}}</h3>
         </article>
     </a>
 {% endfor %}
 {% for c in chatrooms_user4 %}
-    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
         <article>
             <h3>{{c.name}}</h3>
         </article>
     </a>
 {% endfor %}
 {% for c in chatrooms_user5 %}
-    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+    <a href="{{url_for('chatroom', chatroom_key=c.chatroom_key)}}">
         <article>
             <h3>{{c.name}}</h3>
         </article>
@@ -241,7 +241,7 @@
             {% endfor %}
         {%endif%}
 
-        <form method="POST" action="{{url_for('main.chat_post', chatroom_key=chatroom_key)}}">
+        <form method="POST" action="{{url_for('chat_post', chatroom_key=chatroom_key)}}">
             <input type="text" name="text" placeholder="text">
             <input type="submit" value="send">
         </form>
