@@ -7,15 +7,17 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import random, string
 import os
 
+db = SQLAlchemy()
+
 app = Flask(__name__)
 
-#app.config['SECRET_KEY'] = os.urandom(24)
+app.config['SECRET_KEY'] = os.urandom(24)
+
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fordia_user:vpQFJhZxmrXXtBIdBuKIKAqct0kLBxu2@dpg-cch0bfo2i3mukrc01ko0-a/fordia'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
 db.init_app(app)
 
 login_manager = LoginManager()
