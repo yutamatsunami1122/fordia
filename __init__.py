@@ -20,7 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
 login_manager = LoginManager()
-login_manager.login_view = 'app.login'
+login_manager.login_view = 'login'
 login_manager.init_app(app)
 
 class User(UserMixin, db.Model):
