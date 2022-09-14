@@ -12,10 +12,10 @@ db = SQLAlchemy()
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.urandom(24)
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fordia_user:vpQFJhZxmrXXtBIdBuKIKAqct0kLBxu2@dpg-cch0bfo2i3mukrc01ko0-a/fordia'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://fordia_user:vpQFJhZxmrXXtBIdBuKIKAqct0kLBxu2@dpg-cch0bfo2i3mukrc01ko0-a/fordia'
+#app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
 
