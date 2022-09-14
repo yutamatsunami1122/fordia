@@ -59,9 +59,6 @@ class Chat(db.Model):
     text = db.Column(db.String(200), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.now(pytz.timezone('Asia/Tokyo')))
 
-with app.app_context():
-    db.create_all()
-
 @login_manager.user_loader
 def load_user(user_id):
     # since the user_id is just the primary key of our user table, use it in the query for the user
