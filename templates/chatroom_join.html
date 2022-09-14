@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}Chatroom Join{% endblock title %}
+
+{% block content %}
+
+    <h1>Would you like to join this room?</h1>
+    <div class="container">
+        <ul>
+            <li>Chatroom name: {{chatroom_name}}</li>
+            <li>Chatroom key: {{chatroom_key}}</li>
+            <li>Chatroom Owner: {{chatroom_user1.name}}</li>
+            <li>Chatroom Member:
+                {% if chatroom_user2 %}
+                    {{chatroom_user2.name}},
+                {% endif %}
+                {% if chatroom_user3 %}
+                    {{chatroom_user3.name}},
+                {% endif %}
+                {% if chatroom_user4 %}
+                    {{chatroom_user4.name}},
+                {% endif %}
+                {% if chatroom_user5 %}
+                    {{chatroom_user5.name}},
+                {% endif %}
+            </li>
+        </ul>
+        <form method="POST" action="{{url_for('main.chatroom_join')}}">
+            <input type="hidden" name="chatroom_id" value="{{chatroom_id}}">
+            <input type="submit" value="Join">
+        </form>
+    </div>
+{% endblock content%}

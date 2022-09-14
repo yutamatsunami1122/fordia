@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}Main Page{% endblock title %}
+
+{% block static %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/mainpage_text.css')}}">
+{% endblock static %}
+{% block content %}
+
+    <div class="messaging">
+        <div class="inbox_msg">
+            <div class="inbox_people">
+                <div class="headind_srch">
+                    <div class="recent_heading">
+                        <h4>最近</h4>
+                    </div>
+                    <div class="srch_bar">
+                        <div class="stylish-input-group">
+                            <input type="text" class="search-bar"  placeholder="友達を検索" >
+                            <span class="input-group-addon">
+                                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="inbox_chat">
+                    {% for c in chatrooms_user1 %}
+                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                        <div class="chat_list">
+                            <div class="chat_people">
+                                <div class="chat_img">
+                                    <img src="icon_def.png" alt="">
+                                </div>
+                                <div class="chat_ib">
+                                    <h5> {{c.name}} <span class="chat_date">Date</span></h5>
+                                    <p>どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% for c in chatrooms_user2 %}
+                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                        <div class="chat_list">
+                            <div class="chat_people">
+                                <div class="chat_img">
+                                    <img src="icon_def.png" alt="">
+                                </div>
+                                <div class="chat_ib">
+                                    <h5> {{c.name}} <span class="chat_date">Date</span></h5>
+                                    <p>どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% for c in chatrooms_user3 %}
+                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                        <div class="chat_list">
+                            <div class="chat_people">
+                                <div class="chat_img">
+                                    <img src="icon_def.png" alt="">
+                                </div>
+                                <div class="chat_ib">
+                                    <h5> {{c.name}} <span class="chat_date">Date</span></h5>
+                                    <p>どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% for c in chatrooms_user4 %}
+                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                        <div class="chat_list">
+                            <div class="chat_people">
+                                <div class="chat_img">
+                                    <img src="icon_def.png" alt="">
+                                </div>
+                                <div class="chat_ib">
+                                    <h5> {{c.name}} <span class="chat_date">Date</span></h5>
+                                    <p>どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    {% for c in chatrooms_user5 %}
+                    <a href="{{url_for('main.chatroom', chatroom_key=c.chatroom_key)}}">
+                        <div class="chat_list">
+                            <div class="chat_people">
+                                <div class="chat_img">
+                                    <img src="icon_def.png" alt="">
+                                </div>
+                                <div class="chat_ib">
+                                    <h5> {{c.name}} <span class="chat_date">Date</span></h5>
+                                    <p>どこで生れたかとんと見当がつかぬ。何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。吾輩はここで始めて人間というものを見た。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+    </div>
+{% endblock content%}
+
+{% block footer %}{% endblock footer %}

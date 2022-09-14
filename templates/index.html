@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block static %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+{% endblock static %}
+
+{% block content %}
+
+    <h1>ForDia</h1>
+    <h2>Message app with your friends.</h2>
+
+{% endblock content %}

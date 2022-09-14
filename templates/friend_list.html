@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Friend List{% endblock title %}
+
+
+{% block content %}
+    <h1>Add Friend</h1>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <p style="color: red">{{messages[0]}}.</p>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{url_for('main.friend_add')}}">
+            <input type="text" name="friend_key" placeholder="Friend Key">
+            <input type="submit" value="Add">
+        </form>
+        <br>
+        <hr>
+        <h1>Friend List</h1>
+            {% for friend in friends1 %}
+                <article>
+                    <h3>{{friend.name}}</h3>
+                    <form method="POST" action="{{url_for('main.make_chatroom_in_friend_list')}}">
+                        <input type="hidden" name="make_chatroom_in_friend_list" value="{{friend.id}}">
+                        <input type="submit" value="Create a chatroom with {{friend.name}} added">
+                    </form>
+                </article>
+            {% endfor %}
+            {% for friend in friends2 %}
+                <article>
+                    <h3>{{friend.name}}</h3>
+                    <form method="POST" action="{{url_for('main.make_chatroom_in_friend_list')}}">
+                        <input type="hidden" name="make_chatroom_in_friend_list" value="{{friend.id}}">
+                        <input type="submit" value="Create a chatroom with {{friend.name}} added">
+                    </form>
+                </article>
+            {% endfor %}
+        <hr>
+        <h1>Could They Be Your Friends?</h1>
+            {% for maybe_friend in maybe_friends %}
+                <article>
+                    <h3>{{maybe_friend.name}}</h3>
+                    <form method="POST" action="{{url_for('main.maybe_to_friend')}}">
+                        <input type="hidden" name="maybe_friend_id" value="{{maybe_friend.id}}">
+                        <input type="submit" value="Add">
+                    </form>
+                </article>
+            {% endfor %}
+        <hr>
+        <h1>Friend Requested</h1>
+            {% for friend_requested in friends_requested %}
+                <article>
+                    <h3>{{friend_requested.name}}</h3>
+                </article>
+            {% endfor %}
+    </div>
+
+{% endblock content%}

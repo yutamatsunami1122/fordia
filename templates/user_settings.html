@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}User Settings{% endblock title %}
+
+{% block content %}
+
+    <h1>User Settings</h1>
+    <ul>
+        <li><a href="{{url_for('main.change_name')}}">change name</a></li>
+        <li><a>change icon</a></li>
+        <li><a href="{{url_for('main.change_password')}}">change password</a></li>
+        <li><a href="{{url_for('main.friend_key')}}">your friend key</a></li>
+    </ul>
+
+{% endblock content%}
