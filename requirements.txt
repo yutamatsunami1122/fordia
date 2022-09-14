@@ -6,3 +6,4 @@ pytz
 sqlite
 sqlalchemy
 werkzeug
+gunicorn
